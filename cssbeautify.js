@@ -464,6 +464,9 @@
     } else if (typeof window === 'object') {
         // Browser loading.
         window.cssbeautify = cssbeautify;
+    } else if (self instanceof WorkerGlobalScope) {
+        // Web worker.
+        self.cssbeautify = cssbeautify;
     }
 
 }());
